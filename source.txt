@@ -1,0 +1,5 @@
+1. install vite + tailwind
+2. iconify react install
+3. react router install
+4. install swiper js
+5. install react-countup
