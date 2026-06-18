@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import Logo from "../Logo/Logo";
 
 const Navmenu = ({ menuOpen, toggleMenu }) => {
-  const [pages, setPagesOpen] = useState(false);
+  const [pagesOpen, setPagesOpen] = useState(false);
   const [testimonialOpen, setTestimonialOpen] = useState(false);
   const [tourguideOpen, setTourguideOpen] = useState(false);
 
@@ -266,6 +266,159 @@ const Navmenu = ({ menuOpen, toggleMenu }) => {
             </li>
           </ul>
         </div>
+
+        <ul className="space-y-5 lg:hidden block">
+          <li>
+            <Link
+              to="/"
+              className="font-medium text-lg hover:text-prim transition-colors duration-300"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="font-medium text-lg hover:text-prim transition-colors duration-300"
+            >
+              About Us
+            </Link>
+          </li>
+
+          <li className="relative">
+            <span
+              onClick={() => {
+                setPagesOpen(!pagesOpen);
+                setTourguideOpen(false);
+              }}
+              className="cursor-pointer flex items-center text-lg font-medium"
+            >
+              Pages
+              <Icon
+                icon="ep:arrow-down-bold"
+                width="16"
+                height="16"
+                className={`ms-2 transition-transform duration-300 ${pagesOpen ? "rotate-180" : ""}`}
+              />
+            </span>
+
+            <ul
+              className={`mt-2 text-white border border-gray-50/10 shadow-lg rounded-xl transition-all duration-300 z-50 w-fit lg:min-w-full min-w-50 ${pagesOpen ? "opacity-100 visible translate-y-0 h-auto" : "opacity-0 invisible h-0"}`}
+            >
+              <li>
+                <Link
+                  to="/services"
+                  className="block px-4 py-2 hover:translate-x-1 transition"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/1"
+                  className="block px-4 py-2 hover:translate-x-1 transition"
+                >
+                  Services Details
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/testimonials"
+                  className="block px-4 py-2 hover:translate-x-1 transition"
+                >
+                  Testimonials
+                </Link>
+              </li>
+
+              <li className="relative">
+                <div
+                  onClick={() => {
+                    setTourguideOpen(!tourguideOpen);
+                  }}
+                  className="flex justify-between items-center px-4 py-2 cursor-pointer"
+                >
+                  <span>Tour Guide</span>
+                  <Icon
+                    icon="ri:arrow-right-s-line"
+                    width="20"
+                    height="20"
+                    className={`transition-transform ${tourguideOpen ? "rotate-90" : ""}`}
+                  />
+                </div>
+
+                <ul
+                  className={`min-w-52 bg-white/20 text-white transition-all duration-300 ease-in-out ${tourguideOpen ? "max-h-40 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-1"}`}
+                >
+                  <li>
+                    <Link
+                      to="/tourguide"
+                      className="block px-4 py-2 hover:translate-x-1 transition"
+                    >
+                      Tour Guide
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/tourguide/1"
+                      className="block px-4 py-2 hover:translate-x-1 transition"
+                    >
+                      Tour Guide Details
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <Link
+                  to="/faqs"
+                  className="block px-4 py-2 hover:translate-x-1 transition"
+                >
+                  Faqs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/pricing"
+                  className="block px-4 py-2 hover:translate-x-1 transition"
+                >
+                  Pricing
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <Link
+              to="/destination"
+              className="font-medium text-lg hover:text-prim transition-colors duration-300"
+            >
+              Destination
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/tours"
+              className="font-medium text-lg hover:text-prim transition-colors duration-300"
+            >
+              Tours
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/blogs"
+              className="font-medium text-lg hover:text-prim transition-colors duration-300"
+            >
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="font-medium text-lg hover:text-prim transition-colors duration-300"
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   );
