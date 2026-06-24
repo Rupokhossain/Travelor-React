@@ -14,13 +14,13 @@ const Hero = () => {
       style={{ backgroundImage: `url(${headerbg})` }}
     >
       <div className="bg-overlay mx-auto px-5 sm:px-8 md:px-12 py-16 md:py-24 xl:h-screen flex items-center xl:flex-row flex-col xl:gap-0 gap-20">
-        <div className="hero-content w-full xl:ps-12.5 z-1">
-          <h3 className="text-5xl text-white font-kaushan!">Discover</h3>
-          <h1 className="font-kaushan! font-semibold xl:text-[120px] lg:text-[140px] text-white hero-title">
+        <div className="hero-content w-full xl:ps-12.5 z-1 mt-8 md:mt-0">
+          <h3 className="text-3xl sm:text-5xl text-white font-kaushan!">Discover</h3>
+          <h1 className="font-kaushan! font-semibold xl:text-[120px] lg:text-[110px] sm:text-[90px] text-5xl text-white hero-title mt-2">
             The World
           </h1>
           <div className="mt-5 md:mt-10">
-            <p className="text-white mb-7 text-3xl italic leading-7">
+            <p className="text-white mb-7 text-xl sm:text-3xl italic leading-7">
               The Safety of our customers at all stages
             </p>
 
@@ -78,7 +78,7 @@ const Hero = () => {
             <img src={plan} alt="plan-img" className="h-full w-full" />
           </div>
 
-          <div className="offer flex flex-col absolute right-12.5 top-1/2 -translate-y-1/2 text-white z-20">
+          <div className="offer hidden lg:flex flex-col absolute right-12.5 top-1/2 -translate-y-1/2 text-white z-20">
             <span className="font-light text-[22px] leading-7 offer_common">
               Get Up To
             </span>
@@ -91,7 +91,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="circle-area absolute top-0 right-0 bottom-0 left-0 overflow-hidden">
+        <div className="circle-area absolute top-0 right-0 bottom-0 left-0 overflow-hidden hidden md:block">
           <div className="circle1-wrap">
             <div className="rotate-center circle-bg1 circle1-bg">
               <span></span>
@@ -112,12 +112,12 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="cloud1">
+      <div className="cloud1 hidden md:block">
         <div className="cloud-image1 relative overflow-hidden z-0 ">
           <img src={cloud1} alt="cloud-img" className="w-auto" />
         </div>
       </div>
-      <div className="cloud2">
+      <div className="cloud2 hidden md:block">
         <div className="cloud-image2 relative overflow-hidden z-0 ">
           <img src={cloud2} alt="cloud-img" className="w-auto" />
         </div>
